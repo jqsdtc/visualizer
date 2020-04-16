@@ -44,7 +44,7 @@ export class NavBar extends Component {
     return (
       <div id="navbarDiv">
         <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="/">Visualize Algorithm</Navbar.Brand>
+          <Navbar.Brand href="/visualizer">Visualize Algorithm</Navbar.Brand>
 
           <Nav className="mr-auto">
             <NavDropdown
