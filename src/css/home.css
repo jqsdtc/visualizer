@@ -1,0 +1,110 @@
+#home {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #84e8dc 0%, #f4ed8b 100%);
+}
+
+.head {
+  color: white;
+  font-size: 60px;
+}
+
+.visualizer_head {
+  padding: 50px;
+  height: 20vh;
+}
+
+.visualizer_container {
+  height: 80vh;
+  padding: 5% 0 10% 25%;
+  display: flex;
+}
+
+.visualizer_box {
+  position: relative;
+  overflow: hidden;
+  width: 35%;
+  margin-right: 20px;
+}
+
+.visualizer_box img {
+  width: 100%;
+  height: 100%;
+}
+
+.visualizer_name {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 96%;
+  height: 96%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
+  opacity: 0;
+}
+
+.visualizer_name_link {
+  position: relative;
+  margin: 0 0 20px 0;
+  padding: 15px 0;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: black;
+  top: -10px;
+  opacity: 0;
+}
+
+.visualizer_name_link:hover {
+  text-decoration: none;
+  color: coral;
+}
+
+.visualizer_name_link::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  height: 2px;
+  width: 100%;
+  content: "";
+  background-color: coral;
+}
+
+.visualizer_box .visualizer_name_link::after {
+  transform: scaleX(0);
+}
+
+.visualizer_box:hover .visualizer_box img {
+  transform: scale(1.1);
+}
+
+.visualizer_box:hover .visualizer_name {
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.visualizer_box:hover .visualizer_name_link {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0.45s;
+  top: 0;
+  opacity: 1;
+}
+
+.visualizer_box:hover .visualizer_name_link::after {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.63, 0.01, 0, 1.39);
+  transition-delay: 0.65s;
+  transform: scaleX(1);
+}

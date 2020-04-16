@@ -1,0 +1,77 @@
+.navbar {
+  /* min-height: 10vh; */
+  width: 100vw;
+}
+
+.navbar-nav {
+  width: 85%;
+}
+
+.nav-link {
+  width: 20%;
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+
+.nav-item {
+  width: 20%;
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+.navbar-brand {
+  /* padding-right: 2rem;
+  padding-left: 2rem; */
+  width: 15%;
+}
+
+#description {
+  display: inline-block;
+  width: 100vw;
+  height: 9vh;
+  /* background-color: gray; */
+}
+
+.icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  top: 0.35em;
+  margin: 0 0.42em;
+}
+
+.icon-empty {
+  outline: 1px solid black;
+  vertical-align: middle;
+}
+
+#description ul {
+  margin-top: 1.5rem;
+}
+
+#description ul li {
+  display: inline-block;
+  padding: 0 100px 0 0;
+}
+
+.grid {
+  height: 100%;
+  width: 100vw;
+  margin: 0px;
+  padding-left: 1px;
+}
+
+.grid_row {
+  /* font-size: 0; */
+  /*margin: 0px;*/
+  /*padding: 0px;*/
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  margin: 0;
+}
+
+.modal-dialog {
+  margin-top: 15rem;
+}

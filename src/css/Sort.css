@@ -1,0 +1,36 @@
+.navbar {
+  min-height: 10vh;
+  width: 100vw;
+}
+
+.slider {
+  width: 100px;
+  margin-right: 50px;
+}
+
+#speed,
+#array_size {
+  width: 100px;
+  margin-bottom: 0;
+  margin-right: 50px;
+}
+
+.array_container {
+  /* position: absolute; */
+  left: 0px;
+  height: 90vh;
+  width: 100vw;
+  margin: 0px;
+  /* top: 100px; */
+}
+
+.btn {
+  width: 250px;
+}
+
+.bar {
+  width: 5px;
+  display: inline-block;
+  margin: 0 2px;
+  height: 100%;
+}

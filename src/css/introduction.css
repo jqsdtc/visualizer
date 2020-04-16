@@ -1,0 +1,32 @@
+#intro {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 60%;
+  padding: 20px;
+  outline: 5px solid #34495e;
+  border-radius: 4px;
+}
+
+#intro h3 {
+  margin: 20px;
+}
+
+#page_button {
+  position: absolute;
+  top: 85%;
+  right: 2%;
+}
+
+#skip_button {
+  position: absolute;
+  top: 85%;
+  left: 2%;
+}
+
+#page_counter {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+}
