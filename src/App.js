@@ -10,7 +10,7 @@ import Sort from "./pages/sort/Sort";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/pathfinding" component={Path} exact />
