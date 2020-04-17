@@ -66,6 +66,18 @@ export class NavBar extends Component {
               >
                 AStar
               </NavDropdown.Item>
+              <NavDropdown.Item
+                eventKey="BFS"
+                disabled={buttonStatus === "off"}
+              >
+                BFS
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                eventKey="DFS"
+                disabled={buttonStatus === "off"}
+              >
+                DFS
+              </NavDropdown.Item>
             </NavDropdown>
 
             <Nav.Link

@@ -5,21 +5,40 @@ export function findPath(grid, startNode, endNode, algorithm) {
   let sort = D_sort;
   if (algorithm === "Dijkstra") {
     sort = D_sort;
-  } else if (algorithm) {
+  } else if (algorithm === "AStar") {
     sort = A_sort;
+  }else if(algorithm){
+    sort = B_sort;
   }
-  while (unvisitedNodes.length !== 0) {
-    sort(unvisitedNodes, endNode);
-    const curShortestNode = unvisitedNodes.shift();
-    if (curShortestNode.distance === Infinity) {
-      return visitedNodes;
+  if(algorithm === "DFS"){
+    const stack = [];
+    stack.push(startNode);
+    while (stack.length !== 0) {
+      const curNode = stack.pop();
+      visitedNodes.push(curNode);
+      curNode.isVisited = true;
+      visitedNodes.push(curNode);
+      if (curNode === endNode) {
+        return visitedNodes;
+      } else {
+        const neighbors = getNeighbors(curNode,grid);
+        neighbors.forEach(node => stack.push(node));
+      }
     }
-    curShortestNode.isVisited = true;
-    visitedNodes.push(curShortestNode);
-    if (curShortestNode === endNode) {
-      return visitedNodes;
-    } else {
-      updateNeighbors(curShortestNode, grid);
+  }else {
+    while (unvisitedNodes.length !== 0) {
+      sort(unvisitedNodes, endNode);
+      const curShortestNode = unvisitedNodes.shift();
+      if (curShortestNode.distance === Infinity) {
+        return visitedNodes;
+      }
+      curShortestNode.isVisited = true;
+      visitedNodes.push(curShortestNode);
+      if (curShortestNode === endNode) {
+        return visitedNodes;
+      } else {
+        updateNeighbors(curShortestNode, grid);
+      }
     }
   }
 }
@@ -74,6 +93,13 @@ function getNodes(grid) {
   return nodes;
 }
 
+
+function B_sort(nodes, endNode) {
+  nodes.sort((node1, node2) => {
+    return node1.distance - node2.distance;
+  });
+}
+
 //sort nodes according to their distance to the start node
 function D_sort(nodes, endNode) {
   nodes.sort((node1, node2) => {
@@ -114,4 +140,27 @@ function updateNeighbors(node, grid) {
       grid[row][col].previousNode = node;
     }
   }
+}
+
+
+function getNeighbors(node, grid) {
+  const dir = [[0, -1], [1, 0],[0, 1], [-1, 0]];
+  const neighbors = [];
+  for (let i = 0; i < 4; i++) {
+    const row = node.row + dir[i][0];
+    const col = node.col + dir[i][1];
+    if (
+      row >= 0 &&
+      row < grid.length &&
+      col >= 0 &&
+      col < grid[0].length &&
+      !grid[row][col].isVisited &&
+      grid[row][col].type !== "wall"
+    ) {
+      grid[row][col].distance = node.distance + 1;
+      grid[row][col].previousNode = node;
+      neighbors.push(grid[row][col]);
+    }
+  }
+  return neighbors;
 }

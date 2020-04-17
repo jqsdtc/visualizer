@@ -106,7 +106,6 @@ export default class Path extends Component {
       } else if (keyValue === "w") {
         nodeStatus = "key";
       } else {
-        // node.isWall = !node.isWall;
         node.type = node.type === "wall" ? "" : "wall";
         nodeStatus = "wall";
         node.weight = 0;
@@ -210,7 +209,6 @@ export default class Path extends Component {
     const { grid, startNode, endNode } = this.state;
     for (const row of grid) {
       for (const node of row) {
-        // node.isWall = false;
         node.type = "";
         node.weight = 0;
       }
@@ -255,7 +253,6 @@ export default class Path extends Component {
 
   setPath = (row, col) => {
     const { grid } = this.state;
-    // grid[row][col].isPath = true;
     grid[row][col].type = "path";
     this.setState({
       grid: grid
@@ -364,7 +361,7 @@ export default class Path extends Component {
           }}
         />
 
-        <div className="grid">
+        <div id="grid" className="grid">
           {grid.map(Row => {
             return (
               <div key={Row[0].row} className="grid_row">
@@ -412,6 +409,9 @@ const initializeGrid = () => {
   const grid = [];
   const heightF = Math.floor((window.innerHeight * 0.81) / 35);
   const widthF = Math.floor((window.innerWidth) / 35);
+  const padding = Math.floor((window.innerWidth - 35 * widthF)/2);
+  document.getElementById("grid").style.padding = `0 ${padding}px 0 ${padding}px`;
+
 
   START_NODE_ROW = Math.floor(heightF / 2);
   END_NODE_ROW = START_NODE_ROW;
