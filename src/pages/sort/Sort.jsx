@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Navbar, Nav, NavDropdown, Button, Form } from "react-bootstrap";
 import "../../css/Sort.css";
 import { mergeSort } from "../../algorithms/mergeSort";
-import { bubbleSort } from "../../algorithms/bubbleSort";
-import { quikSort } from "../../algorithms/quikSort";
+import { selectionSort } from "../../algorithms/selectionSort";
+import { quickSort } from "../../algorithms/quickSort";
 import { sortAnimation } from "../../animations/sortAnimation";
 
 const BAR_COLOR_ONE = "turquoise";
@@ -81,10 +81,10 @@ export default class Path extends Component {
     document.getElementById("center").disabled = true;
     if (algorithm === "Merge") {
       animation = mergeSort(array);
-    } else if (algorithm === "Bubble") {
-      animation = bubbleSort(array);
+    } else if (algorithm === "Selection") {
+      animation = selectionSort(array);
     } else {
-      animation = quikSort(array);
+      animation = quickSort(array);
     }
 
     sortAnimation(animation, speed, timesOfHeight, algorithm);
@@ -130,11 +130,11 @@ export default class Path extends Component {
               disabled={this.state.buttonStatus === "off"}
               onClick={() =>
                 this.setState({
-                  algorithm: "Quik"
+                  algorithm: "Quick"
                 })
               }
             >
-              Quik Sort
+              Quick Sort
             </Nav.Link>
 
             <Nav.Link
@@ -142,11 +142,11 @@ export default class Path extends Component {
               disabled={this.state.buttonStatus === "off"}
               onClick={() =>
                 this.setState({
-                  algorithm: "Bubble"
+                  algorithm: "Selection"
                 })
               }
             >
-              Bubble Sort
+              Selection Sort
             </Nav.Link>
 
             <Nav.Link

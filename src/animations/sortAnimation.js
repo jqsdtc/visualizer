@@ -29,7 +29,7 @@ export function sortAnimation(animation, speed, timesOfHeight, algorithm) {
         curBar.style.height = `${index2 * timesOfHeight}px`;
       }, i * speed);
     } else if (type === "finished") {
-      if (algorithm === "Bubble" || algorithm === "Quik") {
+      if (algorithm === "Selection" || algorithm === "Quick") {
         setTimeout(() => {
           bars[index2].style.backgroundColor = "#e83e8c";
         }, i * speed);

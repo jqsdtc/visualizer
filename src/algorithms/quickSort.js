@@ -1,4 +1,4 @@
-export function quikSort(array) {
+export function quickSort(array) {
   const copy = array.slice();
   const animation = [];
   partition(copy, 0, copy.length - 1, animation);

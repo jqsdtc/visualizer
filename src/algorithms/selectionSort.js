@@ -1,4 +1,4 @@
-export function bubbleSort(array) {
+export function selectionSort(array) {
   const copy = array.slice();
   const animation = [];
   for (let i = 0; i < copy.length; i++) {
