@@ -14,7 +14,7 @@ export default class Path extends Component {
     this.state = {
       array: [],
       numberOfBar: 50,
-      centerButtonContent: "Vitualize!",
+      centerButtonContent: "Visualize!",
       algorithm: "",
       buttonStatus: "on",
       timesOfHeight: 1,

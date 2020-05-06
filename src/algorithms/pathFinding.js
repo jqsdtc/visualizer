@@ -136,7 +136,7 @@ function updateNeighbors(node, grid) {
       !grid[row][col].isVisited &&
       grid[row][col].type !== "wall"
     ) {
-      grid[row][col].distance = node.distance + 1;
+      grid[row][col].distance = node.distance + node.weight +1;
       grid[row][col].previousNode = node;
     }
   }
